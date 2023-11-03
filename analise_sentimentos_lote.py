@@ -25,22 +25,24 @@ def analise_sentimento(nome_do_produto):
         tentativas += 1
         print(f"Tentativa {tentativas}")
         try:
-            resposta = openai.ChatCompletion.create(
-                    model = "gpt-3.5-turbo",
-                    messages = [
-                            {
-                                    "role": "system",
-                                    "content": prompt_sistema
-                            },
-                            {
-                                    "role": "user",
-                                    "content": prompt_usuario
-                            }
-                    ]
-            )
+            raise openai.error.APIError
+            # resposta = openai.ChatCompletion.create(
+            #         model = "gpt-3.5-turbo",
+            #         messages = [
+            #                 {
+            #                         "role": "system",
+            #                         "content": prompt_sistema
+            #                 },
+            #                 {
+            #                         "role": "user",
+            #                         "content": prompt_usuario
+            #                 }
+            #         ]
+            # )
 
-            salva(f"./dados/analise-{nome_do_produto}", resposta.choices[0].message.content)
-            print("Análise concluída com sucesso!")
+            # salva(f"./dados/analise-{nome_do_produto}", resposta.choices[0].message.content)
+            # print("Análise concluída com sucesso!")
+            # break
         except openai.error.AuthenticationError as e:
             print(f"Erro de autenticação: {e}")
         except openai.error.APIError as e:
