@@ -73,7 +73,7 @@ def salva(nome_do_arquivo, conteudo):
 dotenv.load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-lista_do_produto =  [ "Tapete de yoga", "Tabuleiro de xadrez de madeira", "Grill elétrico para churrasco", "DVD player automotivo"]
+lista_do_produto =  ["DVD player automotivo", "Esteira elétrica para fitness", "Grill elétrico para churrasco", "Mixer de sucos e vitaminas", "Tapete de yoga", "Miniatura de carro colecionável", "Balança de cozinha digital", "Jogo de copos e taças de cristal", "Tabuleiro de xadrez de madeira", "Boia inflável para piscina"]
 for nome_do_produto in lista_do_produto:
     analise_sentimento(nome_do_produto)
 
